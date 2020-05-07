@@ -47,7 +47,7 @@ function token(){
        echo "Token value error: '$TOKEN' is not a number" >&2; return 1
     fi
     acct=$(aws configure get account_num --profile $PROFILE)
-    if [ "$email" = "" ]; then
+    if [ "$acct" = "" ]; then
         echo 'Could not get account number from "aws configure"'
         echo "Token NOT active."
         return 1
